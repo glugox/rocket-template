@@ -48,14 +48,14 @@ pub fn create(
 
 /// Return a list of all {{Table-0}}
 /// TODO: Pagination
-pub fn find(conn: &Conn) -> Option<UserList> {
+pub fn find(conn: &Conn) -> Option<{{Table-0-singular}}List> {
 
-    let users : Vec<User> = users::table.load::<User>(conn.deref())
+    let {{table-0}} : Vec<{{Table-0-singular}}> = {{table-0}}::table.load::<{{Table-0-singular}}>(conn.deref())
         .map_err(|err| println!("Can not load users!: {}", err))
         .unwrap();
 
     Some(UserList{
-        users
+        {{table-0}}
     })
 }
 
