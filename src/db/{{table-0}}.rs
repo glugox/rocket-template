@@ -1,5 +1,5 @@
 use crate::db::Conn;
-use crate::models::{{table-0-singular}}::{{Table-0-singular}};
+use crate::models::{{table-0-singular}}::*;
 use crate::schema::{{table-0}};
 use std::ops::Deref;
 
@@ -51,7 +51,7 @@ pub fn create(
 pub fn find(conn: &Conn) -> Option<{{Table-0-singular}}List> {
 
     let {{table-0}} : Vec<{{Table-0-singular}}> = {{table-0}}::table.load::<{{Table-0-singular}}>(conn.deref())
-        .map_err(|err| println!("Can not load users!: {}", err))
+        .map_err(|err| println!("Can not load {{table-0}}!: {}", err))
         .unwrap();
 
     Some({{Table-0-singular}}List{

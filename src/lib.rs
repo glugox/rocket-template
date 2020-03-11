@@ -54,11 +54,12 @@ pub fn rocket() -> rocket::Rocket {
         .mount(
             "/api",
             routes![
-                routes::{{table-0}}::post_{{table-0-singular}}, // POST
-                routes::{{table-0}}::put_{{table-0-singular}}, // PUT
-                routes::{{table-0}}::get_{{table-0-singular}},  // GET
-                routes::{{table-0}}::delete_{{table-0-singular}}, // DELETE
-            ],
+                routes::{{table-0}}::post_{{table-0-singular}},     // POST item
+                routes::{{table-0}}::put_{{table-0-singular}},      // PUT item
+                routes::{{table-0}}::get_{{table-0}},               // GET list
+                routes::{{table-0}}::get_{{table-0-singular}},      // GET item
+                routes::{{table-0}}::delete_{{table-0-singular}},   // DELETE item
+            ], // TODO: POST list, PUT list, DELETE list
         )
         .attach(db::Conn::fairing())
         .attach(cors_fairing())
