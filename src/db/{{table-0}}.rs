@@ -54,7 +54,7 @@ pub fn find(conn: &Conn) -> Option<{{Table-0-singular}}List> {
         .map_err(|err| println!("Can not load users!: {}", err))
         .unwrap();
 
-    Some(UserList{
+    Some({{Table-0-singular}}List{
         {{table-0}}
     })
 }
