@@ -42,9 +42,14 @@ pub fn post_{{table-0-singular}}(
         })
 }
 
+#[get("/{{table-0}}")]
+pub fn get_{{table-0}}(_key: ApiKey, conn: db::Conn) -> Option<JsonValue> {
+    db::{{table-0}}::find(&conn).map(|{{table-0-singular}}| json!({{table-0-singular}}))
+}
+
 #[get("/{{table-0}}/<id>")]
 pub fn get_{{table-0-singular}}(_key: ApiKey, id: i32, conn: db::Conn) -> Option<JsonValue> {
-    db::{{table-0}}::find(&conn, id).map(|{{table-0-singular}}| json!({ "{{table-0-singular}}": {{table-0-singular}} }))
+    db::{{table-0}}::find_one(&conn, id).map(|{{table-0-singular}}| json!({ "{{table-0-singular}}": {{table-0-singular}} }))
 }
 
 #[derive(Deserialize)]

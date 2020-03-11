@@ -46,7 +46,21 @@ pub fn create(
 }
 
 
-pub fn find(conn: &Conn, id: i32) -> Option<{{Table-0-singular}}> {
+/// Return a list of all {{Table-0}}
+/// TODO: Pagination
+pub fn find(conn: &Conn) -> Option<UserList> {
+
+    let users : Vec<User> = users::table.load::<User>(conn.deref())
+        .map_err(|err| println!("Can not load users!: {}", err))
+        .unwrap();
+
+    Some(UserList{
+        users
+    })
+}
+
+
+pub fn find_one(conn: &Conn, id: i32) -> Option<{{Table-0-singular}}> {
     {{table-0}}::table
         .find(id)
         .get_result(conn.deref())
