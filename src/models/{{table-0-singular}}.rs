@@ -4,6 +4,8 @@ use serde::Serialize;
 
 type Url = String;
 
+// {{dynamic-domain}}
+
 #[derive(Queryable, Serialize)]
 pub struct {{Table-0-singular}} {
     pub id: i32,

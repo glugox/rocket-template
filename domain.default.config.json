@@ -1,0 +1,11 @@
+{
+  "tables": [
+    {
+      "name": "{project}",
+      "fields": [
+        {"key": "id"},
+        {"key": "name"}
+      ]
+    }
+  ]
+}
